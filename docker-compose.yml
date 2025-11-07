@@ -16,13 +16,13 @@ services:
     networks:
       - djangoNet
     volumes:
-      - /home/shihab1/docker-pr-now/locallibDb:/var/lib/mysql
+      - /home/shihab/docker/locallib-db:/var/lib/mysql
   web:
     build: .
     container_name: locallib-web
     command: python manage.py runserver 0.0.0.0:6080
     volumes:
-      - /home/shihab1/docker-pr-now/app/locallib:/locallib
+      - /home/shihab/docker/app/locallib:/locallib
     ports:
       - 6080:6080
     depends_on:
